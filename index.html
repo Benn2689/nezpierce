@@ -1,18 +1,21 @@
-<head>
-  <title>Nezpierce</title>
-  <meta charset="UTF-8" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nezpierce</title>
+    <meta charset="UTF-8" />
 
-  <!-- META TAGS ADDED BELOW -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nezpierce is the online home of Ben Jackson – streamer, DM, and nerd. Watch streams, join D&D Beyond campaigns, and get connected." />
-  <meta name="keywords" content="Nezpierce, Ben Jackson, D&D, Dungeons and Dragons, D&D Beyond, streaming, nezpierce.com, family D&D, gamer dad, Arizona DM" />
-  <meta name="author" content="Ben Jackson" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Nezpierce – Ben Jackson's Streaming & D&D Hub" />
-  <meta property="og:description" content="Join Ben Jackson (aka Nezpierce) for streaming and tabletop roleplay adventures. D&D campaign links and more." />
-  <meta property="og:url" content="https://www.nezpierce.com" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.nezpierce.com/Nezpierce%20stream.webp" />
+    <!-- META TAGS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nezpierce is the online home of Ben Jackson – streamer, DM, and nerd. Watch streams, join D&D Beyond campaigns, and get connected." />
+    <meta name="keywords" content="Nezpierce, Ben Jackson, D&D, Dungeons and Dragons, D&D Beyond, streaming, nezpierce.com, family D&D, gamer dad, Arizona DM" />
+    <meta name="author" content="Ben Jackson" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Nezpierce – Ben Jackson's Streaming & D&D Hub" />
+    <meta property="og:description" content="Join Ben Jackson (aka Nezpierce) for streaming and tabletop roleplay adventures. D&D campaign links and more." />
+    <meta property="og:url" content="https://www.nezpierce.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.nezpierce.com/Nezpierce%20stream.webp" />
+
     <style>
       body {
         margin: 0;
@@ -22,37 +25,99 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
+        justify-content: start;
+        min-height: 100vh;
+        padding: 40px 20px;
       }
+
       img {
         max-width: 90%;
         max-height: 60vh;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         border-radius: 12px;
         box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
       }
-      .button {
+
+      .button, .dropbtn {
         display: inline-block;
         background: #ff0000;
         color: white;
         padding: 12px 24px;
+        margin: 10px;
         text-decoration: none;
         font-weight: bold;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
         transition: transform 0.2s, background 0.2s;
+        cursor: pointer;
       }
-      .button:hover {
+
+      .button:hover, .dropbtn:hover {
         background: #e60000;
         transform: scale(1.05);
       }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #222;
+        min-width: 220px;
+        z-index: 1;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+      }
+
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.2s;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #444;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .link-section {
+        margin-top: 20px;
+        text-align: center;
+      }
     </style>
   </head>
+
   <body>
     <img src="Nezpierce stream.webp" alt="Nezpierce Stream" />
+
     <a class="button" href="https://www.youtube.com/@nezpierce_" target="_blank">
       🎥 Visit My YouTube
     </a>
+
+    <div class="link-section">
+      <div class="dropdown">
+        <div class="dropbtn">⚔️ Sword Coast Adventures</div>
+        <div class="dropdown-content">
+          <a href="https://www.dndbeyond.com/campaigns/join/67752681176740773" target="_blank">Join Campaign</a>
+          <a href="https://drive.google.com/drive/folders/1ctC2yuID81Zq7xDnMjHDdl3KzCx27Z4V?usp=drive_link" target="_blank">Handouts (Google Drive)</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropbtn">🚀 Spelljammers</div>
+        <div class="dropdown-content">
+          <a href="https://www.dndbeyond.com/campaigns/join/67863804001867903" target="_blank">Join Campaign</a>
+          <a href="https://drive.google.com/drive/folders/1ctC2yuID81Zq7xDnMjHDdl3KzCx27Z4V?usp=drive_link" target="_blank">Handouts (Google Drive)</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -3,18 +3,10 @@
   <head>
     <title>Nezpierce</title>
     <meta charset="UTF-8" />
-
-    <!-- META TAGS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Nezpierce is the online home of Ben Jackson – streamer, DM, and nerd. Watch streams, join D&D Beyond campaigns, and get connected." />
-    <meta name="keywords" content="Nezpierce, Ben Jackson, D&D, Dungeons and Dragons, D&D Beyond, streaming, nezpierce.com, family D&D, gamer dad, Arizona DM" />
+    <meta name="description" content="Nezpierce is the online home of Ben Jackson – streamer, DM, and nerd." />
+    <meta name="keywords" content="Nezpierce, Ben Jackson, D&D, streaming" />
     <meta name="author" content="Ben Jackson" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Nezpierce – Ben Jackson's Streaming & D&D Hub" />
-    <meta property="og:description" content="Join Ben Jackson (aka Nezpierce) for streaming and tabletop roleplay adventures. D&D campaign links and more." />
-    <meta property="og:url" content="https://www.nezpierce.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.nezpierce.com/Nezpierce%20stream.webp" />
 
     <style>
       body {
@@ -57,6 +49,11 @@
         transform: scale(1.05);
       }
 
+      .link-section {
+        margin-top: 20px;
+        text-align: center;
+      }
+
       .dropdown {
         position: relative;
         display: inline-block;
@@ -66,37 +63,53 @@
         display: none;
         position: absolute;
         background-color: #222;
-        min-width: 220px;
-        z-index: 1;
         border-radius: 8px;
+        min-width: 220px;
         box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-      }
-
-      .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        transition: background 0.2s;
-      }
-
-      .dropdown-content a:hover {
-        background-color: #444;
+        z-index: 1;
+        left: 0;
+        top: 100%;
       }
 
       .dropdown:hover .dropdown-content {
         display: block;
       }
 
-      /* Add touch event support */
-      .dropdown:focus .dropdown-content,
-      .dropdown:active .dropdown-content {
+      .nested-dropdown {
+        position: relative;
+      }
+
+      .nested-content {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #222;
+        border-radius: 8px;
+        min-width: 180px;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+      }
+
+      .nested-dropdown:hover .nested-content {
         display: block;
       }
-      
-      .link-section {
-        margin-top: 20px;
-        text-align: center;
+
+      .dropdown-content .dropbtn {
+        background: #ff0000;
+        margin: 5px;
+        white-space: nowrap;
+      }
+
+      .nested-content a {
+        color: white;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background 0.2s;
+      }
+
+      .nested-content a:hover {
+        background-color: #444;
       }
     </style>
   </head>
@@ -110,35 +123,41 @@
 
     <div class="link-section">
       <div class="dropdown">
-        <div class="dropbtn">⚔️ Sword Coast Adventures</div>
+        <div class="dropbtn">📜 Campaigns</div>
         <div class="dropdown-content">
-          <a href="https://www.dndbeyond.com/campaigns/join/67752681176740773" target="_blank">Join Campaign</a>
-          <a href="https://drive.google.com/drive/folders/1BqhHbDYNL7woK43AMYxJsHrHZ7ZzmhG1?usp=drive_link" target="_blank">Handouts (Google Drive)</a>
-        </div>
-      </div>
-<div class="link-section">
-      <div class="dropdown">
-        <div class="dropbtn">🔥Ashes of the First FLame</div>
-        <div class="dropdown-content">
-          <a href="https://www.dndbeyond.com/campaigns/join/68706682350159835" target="_blank">Join Campaign</a>
-          <a href="https://drive.google.com/drive/folders/1Y-bCh83MN-_Yb0rSBvF_f7Zv0oFQVTIL?usp=sharing" target="_blank">Handouts (Google Drive)</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <div class="dropbtn">🚀 Spelljammers</div>
-        <div class="dropdown-content">
-          <a href="https://www.dndbeyond.com/campaigns/join/67863804001867903" target="_blank">Join Campaign</a>
-          <a href="https://drive.google.com/drive/folders/1oPTC64Gc2lNFXXwveh6bYpr86XVO9k2i?usp=drive_link" target="_blank">Handouts (Google Drive)</a>
+          <div class="nested-dropdown">
+            <div class="dropbtn">⚔️ Sword C Adventures</div>
+            <div class="nested-content">
+              <a href="https://www.dndbeyond.com/campaigns/join/67752681176740773" target="_blank">Join Campaign</a>
+              <a href="https://drive.google.com/drive/folders/1BqhHbDYNL7woK43AMYxJsHrHZ7ZzmhG1?usp=drive_link" target="_blank">Handouts</a>
+            </div>
+          </div>
+          
+          <div class="nested-dropdown">
+            <div class="dropbtn">⚔️Descent into Avernus🐦‍🔥</div>
+            <div class="nested-content">
+              <a href="https://www.dndbeyond.com/campaigns/join/6871227631268382" target="_blank">Join Campaign</a>
+              <a href="https://drive.google.com/drive/folders/1Bl0OJzjJa12aCFXDSjHnO_XADnc-wpvR?usp=drive_link" target="_blank">Handouts</a>
+            </div>
+          </div>
+
+          <div class="nested-dropdown">
+            <div class="dropbtn">🔥 Ashes of the First Flame</div>
+            <div class="nested-content">
+              <a href="https://www.dndbeyond.com/campaigns/join/68706682350159835" target="_blank">Join Campaign</a>
+              <a href="https://drive.google.com/drive/folders/1Y-bCh83MN-_Yb0rSBvF_f7Zv0oFQVTIL?usp=sharing" target="_blank">Handouts</a>
+            </div>
+          </div>
+
+          <div class="nested-dropdown">
+            <div class="dropbtn">🚀 Spelljammers</div>
+            <div class="nested-content">
+              <a href="https://www.dndbeyond.com/campaigns/join/67863804001867903" target="_blank">Join Campaign</a>
+              <a href="https://drive.google.com/drive/folders/1oPTC64Gc2lNFXXwveh6bYpr86XVO9k2i?usp=drive_link" target="_blank">Handouts</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <script>
-  document.querySelectorAll('.dropbtn').forEach(button => {
-    button.addEventListener('click', function () {
-      const content = this.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-</script>
   </body>
 </html>

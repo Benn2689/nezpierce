@@ -169,31 +169,43 @@
       </div>
     </div>
 
-    <script>
+    <style>
+  .dropdown.no-hover:hover .dropdown-content {
+    display: none !important;
+  }
+</style>
+
+<script>
   const dropdownWrapper = document.querySelector('#campaignDropdown');
   const dropdownBtn = document.querySelector('#campaignDropdown .dropbtn');
   const dropdownMenu = document.querySelector('#campaignMenu');
 
-  // 🖱️ Hover opens dropdown
+  let isTouch = false;
+
+  // Detect if the user is on touch device
+  document.addEventListener('touchstart', () => {
+    isTouch = true;
+    dropdownWrapper.classList.add('no-hover');
+  }, { once: true });
+
+  // Hover behavior (only if not touch)
   dropdownWrapper.addEventListener('mouseenter', () => {
-    dropdownMenu.classList.add('active');
+    if (!isTouch) dropdownMenu.classList.add('active');
   });
 
-  // 🖱️ Hover off entire dropdown closes it
   dropdownWrapper.addEventListener('mouseleave', () => {
-    dropdownMenu.classList.remove('active');
+    if (!isTouch) dropdownMenu.classList.remove('active');
   });
 
-  // 📱 Mobile click toggles dropdown
+  // Tap toggles menu
   dropdownBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     dropdownMenu.classList.toggle('active');
   });
 
-  // 📱 Tap outside closes dropdown
+  // Tap outside closes menu
   document.addEventListener('click', (e) => {
-    const isClickInside = dropdownWrapper.contains(e.target);
-    if (!isClickInside) {
+    if (!dropdownWrapper.contains(e.target)) {
       dropdownMenu.classList.remove('active');
     }
   });

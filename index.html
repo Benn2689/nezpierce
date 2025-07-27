@@ -7,8 +7,9 @@
     <meta name="description" content="Nezpierce is the online home of Ben Jackson – streamer, DM, and nerd." />
     <meta name="keywords" content="Nezpierce, Ben Jackson, D&D, streaming" />
     <meta name="author" content="Ben Jackson" />
- <!-- 🔗 Favicon and Metadata -->
-<link rel="icon" type="image/png" href="/https://raw.githubusercontent.com/Benn2689/nezpierce/refs/heads/main/nezpierce%20logo%202.jpg/favicon-96x96.png" sizes="96x96" />
+
+    <!-- 🔗 Favicon and Metadata -->
+    <link rel="icon" type="image/png" href="/https://raw.githubusercontent.com/Benn2689/nezpierce/refs/heads/main/nezpierce%20logo%202.jpg/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/https://raw.githubusercontent.com/Benn2689/nezpierce/refs/heads/main/nezpierce%20logo%202.jpg/favicon.svg" />
 <link rel="shortcut icon" href="/https://raw.githubusercontent.com/Benn2689/nezpierce/refs/heads/main/nezpierce%20logo%202.jpg/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/https://raw.githubusercontent.com/Benn2689/nezpierce/refs/heads/main/nezpierce%20logo%202.jpg/apple-touch-icon.png" />
@@ -78,7 +79,7 @@
         top: 100%;
       }
 
-      .dropdown:hover .dropdown-content {
+      .dropdown-content.active {
         display: block;
       }
 
@@ -122,16 +123,16 @@
   </head>
 
   <body>
-    <img src="nezpierce-hero.png" alt="Nezpierce Stream" />
+    <img src="https://raw.githubusercontent.com/Benn2689/nezpierce/refs/heads/main/nezpierce-hero.png" alt="Nezpierce Stream" />
 
     <a class="button" href="https://www.youtube.com/@nezpierce_" target="_blank">
       🎥 Visit My YouTube
     </a>
 
     <div class="link-section">
-      <div class="dropdown">
-        <div class="dropbtn">📜 Campaigns</div>
-        <div class="dropdown-content">
+      <div class="dropdown" id="campaignDropdown">
+        <button class="dropbtn">📜 Campaigns</button>
+        <div class="dropdown-content" id="campaignMenu">
           <div class="nested-dropdown">
             <div class="dropbtn">⚔️ Sword C Adventures</div>
             <div class="nested-content">
@@ -139,9 +140,9 @@
               <a href="https://drive.google.com/drive/folders/1BqhHbDYNL7woK43AMYxJsHrHZ7ZzmhG1?usp=drive_link" target="_blank">Handouts</a>
             </div>
           </div>
-          
+
           <div class="nested-dropdown">
-            <div class="dropbtn">⚔️Descent into Avernus🐦‍🔥</div>
+            <div class="dropbtn">⚔️ Descent into Avernus 🐦‍🔥</div>
             <div class="nested-content">
               <a href="https://www.dndbeyond.com/campaigns/join/6871227631268382" target="_blank">Join Campaign</a>
               <a href="https://drive.google.com/drive/folders/1Bl0OJzjJa12aCFXDSjHnO_XADnc-wpvR?usp=drive_link" target="_blank">Handouts</a>
@@ -166,5 +167,35 @@
         </div>
       </div>
     </div>
+
+    <script>
+  const dropdownWrapper = document.querySelector('#campaignDropdown');
+  const dropdownBtn = document.querySelector('#campaignDropdown .dropbtn');
+  const dropdownMenu = document.querySelector('#campaignMenu');
+
+  // 🖱️ Hover opens dropdown
+  dropdownWrapper.addEventListener('mouseenter', () => {
+    dropdownMenu.classList.add('active');
+  });
+
+  // 🖱️ Hover off entire dropdown closes it
+  dropdownWrapper.addEventListener('mouseleave', () => {
+    dropdownMenu.classList.remove('active');
+  });
+
+  // 📱 Mobile click toggles dropdown
+  dropdownBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle('active');
+  });
+
+  // 📱 Tap outside closes dropdown
+  document.addEventListener('click', (e) => {
+    const isClickInside = dropdownWrapper.contains(e.target);
+    if (!isClickInside) {
+      dropdownMenu.classList.remove('active');
+    }
+  });
+</script>
   </body>
 </html>
